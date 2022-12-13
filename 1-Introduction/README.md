@@ -8,3 +8,18 @@
 
 ## UI testing with Behave and Selenium WebDriver
 - Easy UI testing with Selenium Webdriver
+
+## How to retry failed test cases
+- This can be achieved using RerunFormatter, which creates a .txt file containing failed test cases of previous run.
+- Put this in your behave.ini (configuration) file :
+[behave]
+format   = rerun
+outfiles = rerun_failing.feature
+- To rerun failed scenarios, use this command: 
+- behave @rerun_failing.feature
+
+## How to run select test cases
+- We can use @tags before Scenario to run specific test cases only
+
+## Setup and Teardown
+- This is done in environment.py file. This file should be within the same directory as steps folder.
